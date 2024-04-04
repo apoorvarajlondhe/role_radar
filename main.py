@@ -12,7 +12,7 @@ from transformers import DebertaModel,DebertaTokenizer,DebertaConfig
 # DEBERTA MODEL
 config = DebertaConfig.from_pretrained('microsoft/deberta-base')
 model = DebertaModel(config)
-model.load_state_dict(torch.load('./deberta_model.pth',map_location=torch.device('gpu')))
+model.load_state_dict(torch.load('./deberta_model.pth',map_location=torch.device('cuda')))
 tokenizer = DebertaTokenizer.from_pretrained('microsoft/deberta-base')
 model.eval()
 
